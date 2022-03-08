@@ -1,5 +1,9 @@
+import { QueryClient } from "react-query";
+
 import { qs } from "./utils";
 import type { Todo } from "./types";
+
+export const queryClient = new QueryClient();
 
 export function createTodo(todo: Partial<Todo>): Promise<Todo> {
   return client("/api/todos", { data: todo });
@@ -7,6 +11,18 @@ export function createTodo(todo: Partial<Todo>): Promise<Todo> {
 
 export function getAllTodos(): Promise<Todo[]> {
   return client("/api/todos");
+}
+
+export function updateTodo(todo: Partial<Todo>) {
+  return client(`/api/todos/${todo.id}`, { method: "PUT", data: todo });
+}
+
+export function getTodo(id: string): Promise<Todo> {
+  return client(`/api/todos/${id}`);
+}
+
+export function deleteTodo(id: string) {
+  return client(`/api/todos/${id}`, { method: "DELETE" });
 }
 
 async function client(
