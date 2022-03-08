@@ -1,6 +1,5 @@
-import { useRoutes, BrowserRouter as Router } from "react-router-dom";
-
-import routes from "~react-pages";
+import { BrowserRouter as Router } from "react-router-dom";
+import useRouter from "./hooks/useRouter";
 
 import "./App.css";
 
@@ -15,7 +14,8 @@ function App() {
 }
 
 function Routes() {
-  return useRoutes(routes);
+  const { routes } = useRouter();
+  return routes;
 }
 
 export default App;
