@@ -2,7 +2,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { QueryClientProvider } from "react-query";
 
 import { queryClient } from "./client";
-import useRouter from "./hooks/useRouter";
+import useRouter from "./hooks/use-router";
 
 import "./App.css";
 

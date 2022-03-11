@@ -1,7 +1,7 @@
 import React from "react";
 import { useMutation } from "react-query";
 import { deleteTodo, queryClient } from "../client";
-import useRouter from "../hooks/useRouter";
+import useRouter from "../hooks/use-router";
 import type { Todo } from "../types";
 
 const TodoItem: React.FC<{ todo: Todo }> = ({ todo }) => {

@@ -2,7 +2,7 @@ import React from "react";
 import { useMutation, useQuery } from "react-query";
 import { updateTodo, getTodo, queryClient } from "../../client";
 import TodoForm from "../../components/todo-form";
-import useRouter from "../../hooks/useRouter";
+import useRouter from "../../hooks/use-router";
 import type { Todo } from "../../types";
 
 const EditTodo: React.FC = () => {

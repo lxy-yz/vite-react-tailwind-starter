@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "react-query";
 
-import useRouter from "../../hooks/useRouter";
+import useRouter from "../../hooks/use-router";
 import TodoItem from "../../components/todo-item";
 import type { Todo } from "../../types";
 import { getTodo } from "../../client";
