@@ -1,52 +1,57 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import type { Todo } from "../types";
 
 const TodoForm: React.FC<{
   todo?: Todo;
-  onSubmit?(e: React.FormEvent<HTMLFormElement>): void;
+  onSubmit?(): void;
   onCreate?(todo: Partial<Todo>): void;
   onUpdate?(todo: Partial<Todo>): void;
 }> = ({ todo, onSubmit, onCreate, onUpdate }) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Todo>({ defaultValues: todo });
+
   return (
     <form
-      onSubmit={(e) => {
-        onSubmit && onSubmit(e);
-        if (e.defaultPrevented) return;
-        e.preventDefault();
-
-        const formData = new FormData(e.currentTarget);
+      onSubmit={handleSubmit(({ id, title, completed }) => {
         if (todo) {
           onUpdate?.({
-            id: todo.id,
-            title: formData.get("title") as string,
-            completed: formData.get("completed") === "on",
+            id,
+            title,
+            completed,
           });
         } else {
           onCreate?.({
-            title: formData.get("title") as string,
-            completed: formData.get("completed") === "on",
+            title,
+            completed,
           });
         }
-      }}
+
+        onSubmit?.();
+      })}
     >
       <div>
         <label htmlFor="title">Title</label>
         <input
           id="title"
           type="text"
-          name="title"
-          required
-          defaultValue={todo?.title}
+          {...register("title", { required: "Title is required" })}
         />
+        {errors.title && <span role="alert">{errors.title.message}</span>}
       </div>
       <div>
         <label htmlFor="completed">Completed</label>
         <input
           id="completed"
           type="checkbox"
-          name="completed"
-          defaultChecked={todo?.completed}
+          {...register("completed", { required: false })}
         />
+        {errors.completed && (
+          <span role="alert">{errors.completed.message}</span>
+        )}
       </div>
       <button>submit</button>
     </form>

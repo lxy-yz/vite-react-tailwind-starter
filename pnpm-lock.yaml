@@ -14,6 +14,7 @@ specifiers:
   msw: ^0.39.1
   react: ^17.0.2
   react-dom: ^17.0.2
+  react-hook-form: ^7.27.1
   react-query: ^3.34.16
   react-router-dom: ^6.2.2
   typescript: ^4.6.2
@@ -24,6 +25,7 @@ specifiers:
 dependencies:
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
+  react-hook-form: 7.27.1_react@17.0.2
   react-query: 3.34.16_react-dom@17.0.2+react@17.0.2
   react-router-dom: 6.2.2_react-dom@17.0.2+react@17.0.2
 
@@ -2217,6 +2219,15 @@ packages:
       '@babel/runtime': 7.17.2
       react: 17.0.2
     dev: true
+
+  /react-hook-form/7.27.1_react@17.0.2:
+    resolution: {integrity: sha512-N3a7A6zIQ8DJeThisVZGtOUabTbJw+7DHJidmB9w8m3chckv2ZWKb5MHps9d2pPJqmCDoWe53Bos56bYmJms5w==}
+    engines: {node: '>=12.22.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17
+    dependencies:
+      react: 17.0.2
+    dev: false
 
   /react-is/17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
