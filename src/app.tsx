@@ -4,8 +4,6 @@ import { QueryClientProvider } from "react-query";
 import { queryClient } from "./client";
 import useRouter from "./hooks/use-router";
 
-import "./App.css";
-
 function App() {
   return (
     <div className="App">
