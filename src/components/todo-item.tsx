@@ -13,10 +13,10 @@ const TodoItem: React.FC<{ todo: Todo }> = ({ todo }) => {
       <td>{todo.title}</td>
       <td>{todo.completed ? "✅" : "❌"}</td>
       <td>
-        <Link to={`${todo.id}/edit`}>Edit</Link>
+        <Link to={`/todos/${todo.id}/edit`}>Edit</Link>
         {" | "}
         <Link
-          to={`${todo.id}`}
+          to={`/todos/${todo.id}`}
           onClick={(e) => {
             e.preventDefault();
             deleteTodo(todo.id);
@@ -35,7 +35,7 @@ const useDeleteTodo = () => {
       return deleteTodo(id);
     },
     {
-      onSuccess: () => queryClient.invalidateQueries("todos"),
+      onSettled: () => queryClient.invalidateQueries("todos"),
     }
   );
 };

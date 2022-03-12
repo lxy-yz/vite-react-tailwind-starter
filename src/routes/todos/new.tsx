@@ -7,20 +7,22 @@ import type { Todo } from "../../types";
 
 const NewTodo: React.FC = () => {
   const { mutate } = useCreateTodo();
-  const { navigate } = useRouter();
 
-  return <TodoForm onCreate={mutate} onSubmit={() => navigate("..")} />;
+  return <TodoForm onCreate={mutate} />;
 };
 
 function useCreateTodo() {
-  return useMutation(
+  const { navigate } = useRouter();
+  const res = useMutation(
     (todo: Omit<Todo, "id">) => {
       return createTodo(todo);
     },
     {
-      onSuccess: () => queryClient.invalidateQueries("todos"),
+      onSuccess: (todo) => navigate(`../${todo.id}`),
+      onSettled: () => queryClient.invalidateQueries("todos"),
     }
   );
+  return res;
 }
 
 export default NewTodo;

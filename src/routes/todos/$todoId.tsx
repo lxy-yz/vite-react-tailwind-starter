@@ -11,7 +11,13 @@ const TodoPage: React.FC = () => {
   const id = params["todoId"] as string;
   const { data: todo } = useGetTodo(id);
 
-  return todo ? <TodoItem todo={todo} /> : null;
+  return todo ? (
+    <table>
+      <tbody>
+        <TodoItem todo={todo} />
+      </tbody>
+    </table>
+  ) : null;
 };
 
 function useGetTodo(id: string) {

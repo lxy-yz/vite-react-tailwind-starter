@@ -15,6 +15,7 @@ export const handlers = [
       ctx.status(200),
       ctx.json({
         message: "success",
+        data: newTodo,
       })
     );
   }),
@@ -32,14 +33,18 @@ export const handlers = [
   rest.put("/api/todos/:id", (req, res, ctx) => {
     const id = req.params.id;
     const body = req.body as Pick<Todo, "title" | "completed">;
+    let updatedTodo;
 
     // update
-    todos = todos.map((todo) => (todo.id === id ? { ...todo, ...body } : todo));
+    todos = todos.map((todo) =>
+      todo.id === id ? (updatedTodo = { ...todo, ...body }) : todo
+    );
 
     return res(
       ctx.status(200),
       ctx.json({
         message: "success",
+        data: updatedTodo,
       })
     );
   }),
@@ -59,6 +64,7 @@ export const handlers = [
 
   rest.delete("/api/todos/:id", (req, res, ctx) => {
     const id = req.params.id;
+    const deletedTodo = todos.find((todo) => todo.id === id);
 
     // delete
     todos = todos.filter((todo) => todo.id !== id);
@@ -67,6 +73,7 @@ export const handlers = [
       ctx.status(200),
       ctx.json({
         message: "success",
+        data: deletedTodo,
       })
     );
   }),

@@ -4,7 +4,7 @@ import type { Todo } from "../types";
 
 const TodoForm: React.FC<{
   todo?: Todo;
-  onSubmit?(): void;
+  onSubmit?(e: React.FormEvent<HTMLFormElement>): void;
   onCreate?(todo: Partial<Todo>): void;
   onUpdate?(todo: Partial<Todo>): void;
 }> = ({ todo, onSubmit, onCreate, onUpdate }) => {
@@ -16,22 +16,25 @@ const TodoForm: React.FC<{
 
   return (
     <form
-      onSubmit={handleSubmit(({ id, title, completed }) => {
-        if (todo) {
-          onUpdate?.({
-            id,
-            title,
-            completed,
-          });
-        } else {
-          onCreate?.({
-            title,
-            completed,
-          });
-        }
+      onSubmit={(e) => {
+        onSubmit?.(e);
+        e.defaultPrevented && e.preventDefault();
 
-        onSubmit?.();
-      })}
+        handleSubmit(({ id, title, completed }) => {
+          if (todo) {
+            onUpdate?.({
+              id,
+              title,
+              completed,
+            });
+          } else {
+            onCreate?.({
+              title,
+              completed,
+            });
+          }
+        })(e);
+      }}
     >
       <div>
         <label htmlFor="title">Title</label>

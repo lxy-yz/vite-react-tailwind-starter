@@ -2,17 +2,19 @@ import React from "react";
 import { useQuery } from "react-query";
 import { getAllTodos } from "../../client";
 import TodoItem from "../../components/todo-item";
+import useRouter from "../../hooks/use-router";
 
 const AllTodos: React.FC = () => {
+  const { Link } = useRouter();
   const { data: todos } = useGetTodos();
 
   return (
     <table>
       <thead>
         <tr>
-          <td>Title </td>
-          <td>Completed</td>
-          <td></td>
+          <th scope="column">Title </th>
+          <th scope="column">Completed</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -20,6 +22,13 @@ const AllTodos: React.FC = () => {
           return <TodoItem key={todo.id} todo={todo} />;
         })}
       </tbody>
+      <tfoot>
+        <tr>
+          <th scope="column">
+            <Link to="new">New</Link>
+          </th>
+        </tr>
+      </tfoot>
     </table>
   );
 };

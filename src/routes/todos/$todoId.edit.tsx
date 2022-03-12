@@ -32,7 +32,7 @@ function useUpdateTodo() {
       return updateTodo(todo);
     },
     {
-      onSuccess: () => queryClient.invalidateQueries("todos"),
+      onSettled: () => queryClient.invalidateQueries("todos"),
     }
   );
 }
