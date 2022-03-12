@@ -1,5 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { TodoSchema } from "../models/Todo";
 import type { Todo } from "../types";
 
 const TodoForm: React.FC<{
@@ -12,7 +14,10 @@ const TodoForm: React.FC<{
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<Todo>({ defaultValues: todo });
+  } = useForm<Todo>({
+    defaultValues: todo,
+    resolver: zodResolver(TodoSchema.omit({ id: true })),
+  });
 
   return (
     <form
@@ -20,10 +25,10 @@ const TodoForm: React.FC<{
         onSubmit?.(e);
         e.defaultPrevented && e.preventDefault();
 
-        handleSubmit(({ id, title, completed }) => {
+        handleSubmit(({ title, completed }) => {
           if (todo) {
             onUpdate?.({
-              id,
+              id: todo.id,
               title,
               completed,
             });
@@ -38,20 +43,12 @@ const TodoForm: React.FC<{
     >
       <div>
         <label htmlFor="title">Title</label>
-        <input
-          id="title"
-          type="text"
-          {...register("title", { required: "Title is required" })}
-        />
+        <input id="title" type="text" {...register("title")} />
         {errors.title && <span role="alert">{errors.title.message}</span>}
       </div>
       <div>
         <label htmlFor="completed">Completed</label>
-        <input
-          id="completed"
-          type="checkbox"
-          {...register("completed", { required: false })}
-        />
+        <input id="completed" type="checkbox" {...register("completed")} />
         {errors.completed && (
           <span role="alert">{errors.completed.message}</span>
         )}

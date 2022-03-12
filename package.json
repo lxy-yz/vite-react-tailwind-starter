@@ -10,11 +10,13 @@
     "coverage": "vitest --coverage"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.8.8",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.27.1",
     "react-query": "^3.34.16",
-    "react-router-dom": "^6.2.2"
+    "react-router-dom": "^6.2.2",
+    "zod": "^3.13.4"
   },
   "devDependencies": {
     "@testing-library/dom": "^8.11.3",

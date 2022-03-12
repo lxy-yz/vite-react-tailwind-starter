@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@hookform/resolvers': ^2.8.8
   '@testing-library/dom': ^8.11.3
   '@testing-library/jest-dom': ^5.16.2
   '@testing-library/react': ^12.1.4
@@ -21,13 +22,16 @@ specifiers:
   vite: ^2.8.6
   vite-plugin-pages: ^0.21.4
   vitest: ^0.6.0
+  zod: ^3.13.4
 
 dependencies:
+  '@hookform/resolvers': 2.8.8_react-hook-form@7.27.1
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-hook-form: 7.27.1_react@17.0.2
   react-query: 3.34.16_react-dom@17.0.2+react@17.0.2
   react-router-dom: 6.2.2_react-dom@17.0.2+react@17.0.2
+  zod: 3.13.4
 
 devDependencies:
   '@testing-library/dom': 8.11.3
@@ -321,6 +325,14 @@ packages:
       '@babel/helper-validator-identifier': 7.16.7
       to-fast-properties: 2.0.0
     dev: true
+
+  /@hookform/resolvers/2.8.8_react-hook-form@7.27.1:
+    resolution: {integrity: sha512-meAEDur1IJBfKyTo9yPYAuzjIfrxA7m9Ov+1nxaW/YupsqMeseWifoUjWK03+hz/RJizsVQAaUjVxFEkyu0GWg==}
+    peerDependencies:
+      react-hook-form: ^7.0.0
+    dependencies:
+      react-hook-form: 7.27.1_react@17.0.2
+    dev: false
 
   /@jridgewell/resolve-uri/3.0.5:
     resolution: {integrity: sha512-VPeQ7+wH0itvQxnG+lIzWgkysKIr3L9sslimFW55rHMdGu/qCQ5z5h9zq4gI8uBtqkpHhsF4Z/OwExufUCThew==}
@@ -2887,3 +2899,7 @@ packages:
       y18n: 5.0.8
       yargs-parser: 21.0.1
     dev: true
+
+  /zod/3.13.4:
+    resolution: {integrity: sha512-LZRucWt4j/ru5azOkJxCfpR87IyFDn8h2UODdqvXzZLb3K7bb9chUrUIGTy3BPsr8XnbQYfQ5Md5Hu2OYIo1mg==}
+    dev: false
