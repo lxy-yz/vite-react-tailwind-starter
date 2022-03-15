@@ -1,6 +1,8 @@
 # vite-react-starter
 
-React starterkit with following features
+React starterkit with [vite](https://vitejs.dev/) bundler
+
+## Features
 
 - Testing
   - vitest: https://vitest.dev/
@@ -10,8 +12,10 @@ React starterkit with following features
 - Data fetching and caching
   - react-query: https://react-query.tanstack.com/
 - Form
-  - react-hook-form: react-hook-form.com/
+  - react-hook-form: https://react-hook-form.com/
 - Components
   - Radix: https://www.radix-ui.com/
 - Styling
-  - tailwindcss: tailwindcss.com
+  - tailwindcss: https://tailwindcss.com/
+- Auth
+  - firebase: https://usehooks.com/useAuth/
