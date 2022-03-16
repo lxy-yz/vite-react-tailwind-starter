@@ -1,15 +1,20 @@
-import React from "react";
+import type { FormEvent } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { TodoSchema } from "../models/Todo";
 import type { Todo } from "../types";
 
-const TodoForm: React.FC<{
+const TodoForm = ({
+  todo,
+  onSubmit,
+  onCreate,
+  onUpdate,
+}: {
   todo?: Todo;
-  onSubmit?(e: React.FormEvent<HTMLFormElement>): void;
+  onSubmit?(e: FormEvent<HTMLFormElement>): void;
   onCreate?(todo: Partial<Todo>): void;
   onUpdate?(todo: Partial<Todo>): void;
-}> = ({ todo, onSubmit, onCreate, onUpdate }) => {
+}) => {
   const {
     register,
     handleSubmit,

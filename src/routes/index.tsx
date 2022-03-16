@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import { useAuth } from "../hooks/use-auth";
+import useRouter from "../hooks/use-router";
 
-const Index: React.FC = () => {
+const Index = () => {
+  const { Link } = useRouter();
   const { user } = useAuth();
 
   return (

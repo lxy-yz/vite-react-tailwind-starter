@@ -1,12 +1,11 @@
-import React from "react";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import TodoForm from "./todo-form";
 
 describe("<TodoForm />", () => {
   it("should display required error when value is invalid", async () => {
     render(<TodoForm />);
 
-    fireEvent.submit(screen.getByRole("button"));
+    userEvent.click(screen.getByRole("button"));
 
     expect(await screen.findAllByRole("alert")).toHaveLength(1);
     expect(screen.getByText(/Title is required/)).toBeInTheDocument();
@@ -16,12 +15,8 @@ describe("<TodoForm />", () => {
     const onSubmit = vi.fn();
     render(<TodoForm onSubmit={onSubmit} />);
 
-    fireEvent.input(screen.getByLabelText("Title"), {
-      target: {
-        value: "test title",
-      },
-    });
-    fireEvent.submit(screen.getByRole("button"));
+    userEvent.type(screen.getByLabelText("Title"), "test title");
+    userEvent.click(screen.getByRole("button"));
 
     await waitFor(() => expect(screen.queryAllByRole("alert")).toHaveLength(0));
     expect(onSubmit).toHaveBeenCalled();
@@ -38,12 +33,8 @@ describe("<TodoForm />", () => {
       />
     );
 
-    fireEvent.input(screen.getByLabelText("Title"), {
-      target: {
-        value: "test title",
-      },
-    });
-    fireEvent.submit(screen.getByRole("button"));
+    userEvent.type(screen.getByLabelText("Title"), "test title");
+    userEvent.click(screen.getByRole("button"));
 
     await waitFor(() => expect(screen.queryAllByRole("alert")).toHaveLength(0));
     expect(onUpdate).toHaveBeenCalled();

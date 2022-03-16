@@ -1,11 +1,9 @@
-import React from 'react'
-
-const Component: React.FC = () => {
+const Component = () => {
   return (
     <>
       <p>blog/index.tsx</p>
     </>
-  )
-}
+  );
+};
 
-export default Component
+export default Component;

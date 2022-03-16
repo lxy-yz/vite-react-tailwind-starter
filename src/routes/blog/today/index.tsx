@@ -1,9 +1,5 @@
-import React from 'react'
+const Index = () => {
+  return <p>blog/today/index.tsx</p>;
+};
 
-const index: React.FC = () => {
-  return (
-    <p>blog/today/index.tsx</p>
-  )
-}
-
-export default index
+export default Index;

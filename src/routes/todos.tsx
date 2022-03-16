@@ -1,7 +1,6 @@
-import React from "react";
 import useRouter from "../hooks/use-router";
 
-const Todos: React.FC = () => {
+const Todos = () => {
   const { Outlet } = useRouter();
   return (
     <div>

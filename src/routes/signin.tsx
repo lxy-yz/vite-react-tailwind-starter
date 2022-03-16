@@ -1,10 +1,9 @@
-import React from "react";
 import { useMutation } from "react-query";
 import UserForm from "../components/user-form";
 import { useAuth } from "../hooks/use-auth";
 import type { User } from "../models/User";
 
-const Signin: React.FC = () => {
+const Signin = () => {
   const { mutate: signin, data: user, error } = useSignin();
 
   return (

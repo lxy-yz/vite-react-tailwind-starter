@@ -1,4 +1,3 @@
-import React from "react";
 import { useQuery } from "react-query";
 
 import useRouter from "../../hooks/use-router";
@@ -6,7 +5,7 @@ import TodoItem from "../../components/todo-item";
 import type { Todo } from "../../types";
 import { getTodo } from "../../client";
 
-const TodoPage: React.FC = () => {
+const TodoPage = () => {
   const { params } = useRouter();
   const id = params["todoId"] as string;
   const { data: todo } = useGetTodo(id);

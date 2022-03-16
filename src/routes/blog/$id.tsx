@@ -1,13 +1,12 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import useRouter from "../../hooks/use-router";
 
-const Component: React.FC = () => {
-  const { id } = useParams()
+const Component = () => {
+  const { params } = useRouter();
   return (
     <>
-      <p>blog/$id.tsx: { id }</p>
+      <p>blog/$id.tsx: {params.id}</p>
     </>
-  )
-}
+  );
+};
 
-export default Component
+export default Component;

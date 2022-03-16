@@ -1,11 +1,10 @@
-import React from "react";
 import { useMutation } from "react-query";
 import { createTodo, queryClient } from "../../client";
 import TodoForm from "../../components/todo-form";
 import useRouter from "../../hooks/use-router";
 import type { Todo } from "../../types";
 
-const NewTodo: React.FC = () => {
+const NewTodo = () => {
   const { mutate } = useCreateTodo();
 
   return <TodoForm onCreate={mutate} />;

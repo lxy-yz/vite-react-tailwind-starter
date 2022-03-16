@@ -2,7 +2,6 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import * as firebaseAuth from "firebase/auth";
 import type { User } from "firebase/auth";
-import { createContext, useContext, useEffect, useState } from "react";
 import invariant from "../utils";
 
 const firebaseConfig = {

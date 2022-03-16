@@ -1,10 +1,9 @@
-import React from "react";
 import { useQuery } from "react-query";
 import { getAllTodos } from "../../client";
 import TodoItem from "../../components/todo-item";
 import useRouter from "../../hooks/use-router";
 
-const AllTodos: React.FC = () => {
+const AllTodos = () => {
   const { Link } = useRouter();
   const { data: todos } = useGetTodos();
 

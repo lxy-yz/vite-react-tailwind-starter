@@ -1,11 +1,10 @@
-import React from "react";
 import { useMutation, useQuery } from "react-query";
 import { updateTodo, getTodo, queryClient } from "../../client";
 import TodoForm from "../../components/todo-form";
 import useRouter from "../../hooks/use-router";
 import type { Todo } from "../../types";
 
-const EditTodo: React.FC = () => {
+const EditTodo = () => {
   const { params, navigate } = useRouter();
   const id = params["todoId"] as string;
   const { data: todo } = useGetTodo(id);

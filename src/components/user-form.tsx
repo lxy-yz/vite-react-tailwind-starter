@@ -1,14 +1,17 @@
-import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { UserSchema } from "../models/User";
 import type { User } from "../models/User";
 
-const UserForm: React.FC<{
+const UserForm = ({
+  signin,
+  onSignin,
+  onSignup,
+}: {
   signin: boolean;
   onSignin?(email: string, password: string): void;
   onSignup?(email: string, password: string): void;
-}> = ({ signin, onSignin, onSignup }) => {
+}) => {
   const {
     register,
     handleSubmit,

@@ -1,9 +1,5 @@
-import React from 'react'
+const all = () => {
+  return <p>blog ...all route</p>;
+};
 
-const all: React.FC = () => {
-  return (
-    <p>blog ...all route</p>
-  )
-}
-
-export default all
+export default all;

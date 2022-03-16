@@ -1,13 +1,3 @@
-import { useMemo } from "react";
-import {
-  Link,
-  Outlet,
-  useLocation,
-  useParams,
-  useNavigate,
-  useRoutes,
-} from "react-router-dom";
-
 import routesConfig from "~react-pages";
 
 export default function useRouter() {
