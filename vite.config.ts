@@ -4,6 +4,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import Pages from "vite-plugin-pages";
 import AutoImport from "unplugin-auto-import/vite";
+import yaml from "@rollup/plugin-yaml";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -30,6 +31,9 @@ export default defineConfig({
           ],
         },
         {
+          "react-i18next": ["useTranslation"],
+        },
+        {
           "@testing-library/react": [
             "render",
             "fireEvent",
@@ -42,9 +46,10 @@ export default defineConfig({
           "@testing-library/user-event": [["default", "userEvent"]],
         },
       ],
-
       dts: "src/auto-imports.d.ts",
     }),
+
+    yaml(),
   ],
 
   // https://vitest.dev/config/

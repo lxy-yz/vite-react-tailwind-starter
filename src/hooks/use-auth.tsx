@@ -13,9 +13,9 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_APP_ID,
   measurementId: import.meta.env.VITE_MEASUREMENT_ID,
 };
-const app = initializeApp(firebaseConfig);
+// const app = initializeApp(firebaseConfig);
 //TODO: use analytics
-const analytics = getAnalytics(app);
+// const analytics = getAnalytics(app);
 
 const AuthContext = createContext<{
   user?: User;
@@ -38,6 +38,12 @@ export const useAuth = () => {
 };
 
 function useProvideAuth() {
+  try {
+    firebaseAuth.getAuth();
+  } catch {
+    return null;
+  }
+
   const [user, setUser] = useState<User>();
 
   const signin = (email: string, password: string) => {
