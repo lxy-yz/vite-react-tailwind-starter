@@ -6,6 +6,7 @@ React starterkit with [vite](https://vitejs.dev/) bundler
 
 - Testing
   - vitest: https://vitest.dev/
+  - cypress: https://docs.cypress.io/
 - Routing
   - filesystem routes: https://github.com/hannoeru/vite-plugin-pages
   - react-router: https://reactrouterdotcom.fly.dev/docs/en/v6/api
