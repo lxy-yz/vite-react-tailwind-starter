@@ -3,16 +3,17 @@ import { QueryClientProvider } from "react-query";
 
 import { queryClient } from "./client";
 import useRouter from "./hooks/use-router";
+import { AuthProvider } from "./hooks/use-auth";
 
 function App() {
   return (
-    <div className="App">
+    <AuthProvider>
       <QueryClientProvider client={queryClient}>
         <Router>
           <Routes />
         </Router>
       </QueryClientProvider>
-    </div>
+    </AuthProvider>
   );
 }
 
