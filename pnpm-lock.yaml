@@ -24,6 +24,7 @@ specifiers:
   postcss: ^8.4.8
   react: ^17.0.2
   react-dom: ^17.0.2
+  react-error-boundary: ^3.1.4
   react-hook-form: ^7.27.1
   react-i18next: ^11.15.7
   react-query: ^3.34.16
@@ -42,6 +43,7 @@ dependencies:
   i18next: 21.6.14
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
+  react-error-boundary: 3.1.4_react@17.0.2
   react-hook-form: 7.27.1_react@17.0.2
   react-i18next: 11.15.7_f94be6b4dd1edc1d8608af374b838bd6
   react-query: 3.34.16_react-dom@17.0.2+react@17.0.2
@@ -4375,7 +4377,6 @@ packages:
     dependencies:
       '@babel/runtime': 7.17.2
       react: 17.0.2
-    dev: true
 
   /react-hook-form/7.27.1_react@17.0.2:
     resolution: {integrity: sha512-N3a7A6zIQ8DJeThisVZGtOUabTbJw+7DHJidmB9w8m3chckv2ZWKb5MHps9d2pPJqmCDoWe53Bos56bYmJms5w==}

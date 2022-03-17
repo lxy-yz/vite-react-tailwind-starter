@@ -38,7 +38,7 @@ export default defineConfig({
             "render",
             "fireEvent",
             "waitFor",
-            //FIXME: type conflict with window.screen
+            // FIXME: type conflict with window.screen
             // "screen",
           ],
         },

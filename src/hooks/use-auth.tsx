@@ -1,21 +1,6 @@
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import * as firebaseAuth from "firebase/auth";
 import type { User } from "firebase/auth";
 import invariant from "../utils";
-
-const firebaseConfig = {
-  apiKey: import.meta.env.VITE_API_KEY,
-  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_APP_ID,
-  measurementId: import.meta.env.VITE_MEASUREMENT_ID,
-};
-// const app = initializeApp(firebaseConfig);
-//TODO: use analytics
-// const analytics = getAnalytics(app);
 
 const AuthContext = createContext<{
   user?: User;
@@ -38,36 +23,31 @@ export const useAuth = () => {
 };
 
 function useProvideAuth() {
-  try {
-    firebaseAuth.getAuth();
-  } catch {
-    return null;
-  }
-
   const [user, setUser] = useState<User>();
 
-  const signin = (email: string, password: string) => {
-    return firebaseAuth
-      .signInWithEmailAndPassword(firebaseAuth.getAuth(), email, password)
-      .then((response) => {
-        setUser(response.user);
-        return response.user;
-      });
+  const signin = async (email: string, password: string) => {
+    const response = await firebaseAuth.signInWithEmailAndPassword(
+      firebaseAuth.getAuth(),
+      email,
+      password
+    );
+    setUser(response.user);
+    return response.user;
   };
 
-  const signup = (email: string, password: string) => {
-    return firebaseAuth
-      .createUserWithEmailAndPassword(firebaseAuth.getAuth(), email, password)
-      .then((response) => {
-        setUser(response.user);
-        return response.user;
-      });
+  const signup = async (email: string, password: string) => {
+    const response = await firebaseAuth.createUserWithEmailAndPassword(
+      firebaseAuth.getAuth(),
+      email,
+      password
+    );
+    setUser(response.user);
+    return response.user;
   };
 
-  const signout = () => {
-    return firebaseAuth.signOut(firebaseAuth.getAuth()).then(() => {
-      setUser(undefined);
-    });
+  const signout = async () => {
+    await firebaseAuth.signOut(firebaseAuth.getAuth());
+    setUser(undefined);
   };
 
   const sendPasswordResetEmail = (email: string) => {
