@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
+import { getAnalytics } from "firebase/analytics";
 
 export const install = () => {
   const firebaseConfig = {
@@ -13,6 +13,5 @@ export const install = () => {
   };
 
   const app = initializeApp(firebaseConfig);
-  // TODO: use analytics
-  // const analytics = getAnalytics(app);
+  window.analytics = getAnalytics(app);
 };

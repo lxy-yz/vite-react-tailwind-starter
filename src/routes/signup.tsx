@@ -1,4 +1,6 @@
 import { useMutation } from "react-query";
+import { logEvent } from "firebase/analytics";
+
 import UserForm from "../components/user-form";
 import { useAuth } from "../hooks/use-auth";
 import type { User } from "../models/User";
@@ -20,9 +22,18 @@ const Signup = () => {
 
 function useSignup() {
   const { signup } = useAuth();
-  return useMutation(({ email, password }: Omit<User, "id">) => {
-    return signup(email, password);
-  });
+  return useMutation(
+    ({ email, password }: Omit<User, "id">) => {
+      return signup(email, password);
+    },
+    {
+      onSuccess: () => {
+        logEvent(window.analytics, "signup", {
+          method: "firebase auth",
+        });
+      },
+    }
+  );
 }
 
 export default Signup;
