@@ -9,13 +9,15 @@ const Signup = () => {
   const { mutate: signup, data: user, error } = useSignup();
 
   return (
-    <div className="flex flex-col gap-4">
-      <UserForm
-        signin={false}
-        onSignup={(email, password) => signup({ email, password })}
-      />
-      {user && <span role="alert">{user.email} successfully signed up!</span>}
-      {error && <span role="alert">{(error as Error).message}</span>}
+    <div className="mx-auto max-w-md">
+      <div className="flex flex-col gap-4">
+        <UserForm
+          signin={false}
+          onSignup={(email, password) => signup({ email, password })}
+        />
+        {user && <span role="alert">{user.email} successfully signed up!</span>}
+        {error && <span role="alert">{(error as Error).message}</span>}
+      </div>
     </div>
   );
 };

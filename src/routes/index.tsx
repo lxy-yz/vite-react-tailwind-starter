@@ -59,6 +59,14 @@ const Index = () => {
             </li>
             <li>
               <Link
+                to="/markdown"
+                className="hover:text-sky-500 dark:hover:text-sky-400"
+              >
+                markdown
+              </Link>
+            </li>
+            <li>
+              <Link
                 to="/xxx"
                 className="hover:text-sky-500 dark:hover:text-sky-400"
               >

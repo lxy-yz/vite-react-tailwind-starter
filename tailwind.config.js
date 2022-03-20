@@ -1,7 +1,10 @@
 module.exports = {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./vite.config.ts", "./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    // https://tailwindcss.com/docs/typography-plugin
+    require("@tailwindcss/typography"),
+  ],
 };
