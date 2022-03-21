@@ -46,19 +46,23 @@ const TodoForm = ({
         })(e);
       }}
     >
-      <div>
+      <div className="mt-4 flex flex-col">
         <label htmlFor="title">Title</label>
         <input id="title" type="text" {...register("title")} />
         {errors.title && <span role="alert">{errors.title.message}</span>}
       </div>
-      <div>
+      <div className="mt-4 flex flex-row items-center gap-2">
         <label htmlFor="completed">Completed</label>
         <input id="completed" type="checkbox" {...register("completed")} />
         {errors.completed && (
           <span role="alert">{errors.completed.message}</span>
         )}
       </div>
-      <button>submit</button>
+      <div className="mt-8 flex justify-end">
+        <button className="px-6 py-2 text-white bg-blue-500 hover:bg-sky-500">
+          submit
+        </button>
+      </div>
     </form>
   );
 };

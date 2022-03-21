@@ -11,8 +11,8 @@ const TodoPage = () => {
   const { data: todo } = useGetTodo(id);
 
   return todo ? (
-    <table>
-      <tbody>
+    <table className="w-full">
+      <tbody className="text-left">
         <TodoItem todo={todo} />
       </tbody>
     </table>

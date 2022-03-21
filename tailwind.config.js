@@ -6,5 +6,6 @@ module.exports = {
   plugins: [
     // https://tailwindcss.com/docs/typography-plugin
     require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
   ],
 };
