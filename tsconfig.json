@@ -18,6 +18,7 @@
     "types": [
       "vite/client",
       "vite-plugin-pages/client-react",
+      "unplugin-icons/types/react",
       "vitest/globals"
     ]
   },

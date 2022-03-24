@@ -1,6 +1,8 @@
 import { useAuth } from "../hooks/use-auth";
 import useRouter from "../hooks/use-router";
 
+import ReactLogo from "~icons/logos/react";
+
 const Index = () => {
   const { Link } = useRouter();
   const { user } = useAuth();
@@ -9,6 +11,7 @@ const Index = () => {
     <div>
       <header className="shadow">
         <nav className="p-4 md:p-6 lg:p-8 font-semibold text-sm max-w-screen-lg mx-auto">
+          <ReactLogo style={{ fontSize: "3em", margin: "1rem auto" }} />
           <ul className="w-full h-full flex space-x-8 justify-center items-center">
             {user ? (
               <>
@@ -76,6 +79,7 @@ const Index = () => {
           </ul>
         </nav>
       </header>
+      <main></main>
     </div>
   );
 };

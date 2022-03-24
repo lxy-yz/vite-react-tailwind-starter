@@ -10,6 +10,9 @@ import Frontmatter from "front-matter";
 import MarkdownIt from "markdown-it";
 import prism from "markdown-it-prism";
 
+import Icons from "unplugin-icons/vite";
+import IconsResolver from "unplugin-icons/resolver";
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -24,6 +27,12 @@ export default defineConfig({
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
+      resolvers: [
+        IconsResolver({
+          prefix: "Icon",
+          extension: "jsx",
+        }),
+      ],
       imports: [
         "react-router-dom",
         {
@@ -90,6 +99,13 @@ export default defineConfig({
         };
       },
     },
+
+    // https://github.com/antfu/unplugin-icons
+    Icons({
+      compiler: "jsx",
+      jsx: "react",
+      autoInstall: false,
+    }),
   ],
 
   // https://vitest.dev/config/
