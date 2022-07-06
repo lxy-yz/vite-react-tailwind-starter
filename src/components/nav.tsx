@@ -74,9 +74,9 @@ const Nav = () => {
 
       <div className="md:ml-auto flex items-center space-x-4">
         <ReactLogo style={{ fontSize: "3em", margin: "1rem auto" }} />
-        <a className="" onClick={(e) => {
-          e.preventDefault()
+        <a className="hover:text-sky-500 dark:hover:text-sky-400 cursor-pointer" onClick={() => {
           signout()
+          location.replace('/')
         }}>sign out</a>
       </div>
     </nav>
