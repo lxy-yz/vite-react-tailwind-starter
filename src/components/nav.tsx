@@ -2,7 +2,7 @@ import { useAuth } from "../hooks/use-auth";
 import ReactLogo from "~icons/logos/react";
 
 const Nav = () => {
-  const { user } = useAuth();
+  const { user, signout } = useAuth();
 
   return (
     <nav className="flex items-center flex-col md:flex-row font-semibold text-sm px-6">
@@ -72,8 +72,12 @@ const Nav = () => {
         </li>
       </ul>
 
-      <div className="md:ml-auto">
+      <div className="md:ml-auto flex items-center space-x-4">
         <ReactLogo style={{ fontSize: "3em", margin: "1rem auto" }} />
+        <a className="" onClick={(e) => {
+          e.preventDefault()
+          signout()
+        }}>sign out</a>
       </div>
     </nav>
   );

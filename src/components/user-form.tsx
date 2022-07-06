@@ -22,6 +22,7 @@ const UserForm = ({
 
   return (
     <form
+      className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
       onSubmit={(e) => {
         handleSubmit(({ email, password }) => {
           if (signin) {
@@ -32,17 +33,17 @@ const UserForm = ({
         })(e);
       }}
     >
-      <div>
-        <label htmlFor="email">Email</label>
-        <input id="email" type="email" {...register("email")} />
-        {errors.email && <span role="alert">{errors.email.message}</span>}
+      <div className="mb-4">
+        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">Email</label>
+        <input className="w-full" id="email" type="email" {...register("email")} />
+        {errors.email && <span role="alert" className="text-red-500 text-xs italic">{errors.email.message}</span>}
       </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <input id="password" type="password" {...register("password")} />
-        {errors.password && <span role="alert">{errors.password.message}</span>}
+      <div className="mb-6">
+        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">Password</label>
+        <input className="w-full" id="password" type="password" {...register("password")} />
+        {errors.password && <span role="alert" className="text-red-500 text-xs italic">{errors.password.message}</span>}
       </div>
-      <button className="rounded-full px-4 py-1 border-2 border-sky-500 text-sky-500 font-semibold">
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
         submit
       </button>
     </form>

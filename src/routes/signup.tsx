@@ -2,11 +2,13 @@ import { useMutation } from "react-query";
 import { logEvent } from "firebase/analytics";
 
 import UserForm from "../components/user-form";
-import { useAuth } from "../hooks/use-auth";
+import { useAuth, useRedirectWhenSignedIn } from "../hooks/use-auth";
 import type { User } from "../models/User";
 import Nav from "../components/nav";
 
 const Signup = () => {
+  useRedirectWhenSignedIn()
+
   const { mutate: signup, data: user, error } = useSignup();
 
   return (
@@ -15,7 +17,7 @@ const Signup = () => {
         <Nav />
       </header>
 
-      <div className="mx-auto max-w-screen-lg">
+      <div className="mx-auto max-w-sm">
         <div className="mt-32 flex flex-col gap-4">
           <UserForm
             signin={false}

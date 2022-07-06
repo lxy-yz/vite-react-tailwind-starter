@@ -3,6 +3,7 @@ import useRouter from "../hooks/use-router";
 
 const Blog = () => {
   const { Link, Outlet } = useRouter();
+
   return (
     <div>
       <header className="shadow">

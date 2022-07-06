@@ -1,6 +1,7 @@
 import * as firebaseAuth from "firebase/auth";
 import type { User } from "firebase/auth";
 import invariant from "../utils";
+import useRouter from "./use-router";
 
 const AuthContext = createContext<{
   user?: User;
@@ -20,6 +21,17 @@ export const useAuth = () => {
   const auth = useContext(AuthContext);
   invariant(auth, "useAuth must be used within an AuthProvider");
   return auth;
+};
+
+export const useRedirectWhenSignedIn = (redirectTo = '/') => {
+  const router = useRouter()
+  const auth = useAuth();
+  useEffect(() => {
+    if (auth.user) {
+      router.navigate(redirectTo);
+    }
+  }, [auth.user]);
+  return null;
 };
 
 function useProvideAuth() {
