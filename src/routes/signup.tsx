@@ -4,19 +4,26 @@ import { logEvent } from "firebase/analytics";
 import UserForm from "../components/user-form";
 import { useAuth } from "../hooks/use-auth";
 import type { User } from "../models/User";
+import Nav from "../components/nav";
 
 const Signup = () => {
   const { mutate: signup, data: user, error } = useSignup();
 
   return (
-    <div className="mx-auto max-w-md">
-      <div className="flex flex-col gap-4">
-        <UserForm
-          signin={false}
-          onSignup={(email, password) => signup({ email, password })}
-        />
-        {user && <span role="alert">{user.email} successfully signed up!</span>}
-        {error && <span role="alert">{(error as Error).message}</span>}
+    <div>
+      <header className="shadow">
+        <Nav />
+      </header>
+
+      <div className="mx-auto max-w-screen-lg">
+        <div className="mt-32 flex flex-col gap-4">
+          <UserForm
+            signin={false}
+            onSignup={(email, password) => signup({ email, password })}
+          />
+          {user && <span role="alert">{user.email} successfully signed up!</span>}
+          {error && <span role="alert">{(error as Error).message}</span>}
+        </div>
       </div>
     </div>
   );

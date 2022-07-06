@@ -2,9 +2,6 @@ lockfileVersion: 5.3
 
 specifiers:
   '@hookform/resolvers': ^2.8.8
-  '@iconify-json/carbon': ^1.1.2
-  '@iconify-json/logos': ^1.1.3
-  '@iconify-json/mdi': ^1.1.3
   '@iconify/json': ^2.1.19
   '@iconify/react': ^3.2.0
   '@rollup/plugin-yaml': ^3.1.0
@@ -64,9 +61,6 @@ dependencies:
   zod: 3.13.4
 
 devDependencies:
-  '@iconify-json/carbon': 1.1.2
-  '@iconify-json/logos': 1.1.3
-  '@iconify-json/mdi': 1.1.3
   '@iconify/json': 2.1.19
   '@rollup/plugin-yaml': 3.1.0
   '@svgr/core': 6.2.1
@@ -1022,24 +1016,6 @@ packages:
     dependencies:
       react-hook-form: 7.27.1_react@17.0.2
     dev: false
-
-  /@iconify-json/carbon/1.1.2:
-    resolution: {integrity: sha512-kopcVYOmKM1e6u7B8XugmiNV+7lDcK5hJR2XLVpYPfwJSw5M6jGTFe4ZD+SbWfxavOt67ufQtczWKwd9o7gN9Q==}
-    dependencies:
-      '@iconify/types': 1.1.0
-    dev: true
-
-  /@iconify-json/logos/1.1.3:
-    resolution: {integrity: sha512-RSBjoqoYaJX/M6wRbpEey5Da6ri9Te5f3wx2dkPAhbv039pK5m2uthuSjQbC0sZk7xWlMBj852xXvagavbgnpw==}
-    dependencies:
-      '@iconify/types': 1.1.0
-    dev: true
-
-  /@iconify-json/mdi/1.1.3:
-    resolution: {integrity: sha512-ABXndnAViaqEcK31lrXeTZp/arE+s8l9J2fCVIrzMrEkD5eYlm33g3sUzvyETCS4skZ5f7B/MiDXJseTJ9hLkA==}
-    dependencies:
-      '@iconify/types': 1.1.0
-    dev: true
 
   /@iconify/json/2.1.19:
     resolution: {integrity: sha512-JaArf0gt4RJSrGq8H0b/WPBVbT9+1oyb9p+yVc82xUJePf0zIuxgmZcoem8Ivgc+gl1Xf6qlL+epicQHNROWig==}
