@@ -1,7 +1,5 @@
-declare global {
-  interface Window {
-    analytics: any;
-  }
+interface Window {
+  analytics: any;
 }
 
 declare module "*.md" {
