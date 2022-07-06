@@ -8,6 +8,7 @@ describe("<TodoForm />", () => {
     userEvent.click(screen.getByRole("button"));
 
     expect(await screen.findAllByRole("alert")).toHaveLength(1);
+    // @ts-ignore
     expect(screen.getByText(/Title is required/)).toBeInTheDocument();
   });
 
