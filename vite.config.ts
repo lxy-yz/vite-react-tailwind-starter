@@ -50,6 +50,7 @@ export default defineConfig({
         {
           "react-i18next": ["useTranslation"],
         },
+        { "usehooks-ts": ["useDarkMode"] },
         {
           "@testing-library/react": [
             "render",

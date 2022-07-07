@@ -2,8 +2,7 @@
 
 React tailwindcss starter kit with [vite](https://vitejs.dev/) ![](https://api.iconify.design/vscode-icons/file-type-vite.svg?color=%23ec5990&width=36)
 
-<img src="https://user-images.githubusercontent.com/90570853/177818045-6ca8df39-bed7-4d79-b671-40dee89e5e25.png" width="480" />
-
+<img src="./demo.png" width="480" />
 
 ## Features
 

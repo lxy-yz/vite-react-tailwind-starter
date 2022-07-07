@@ -6,26 +6,26 @@ const Index = () => {
       <header className="shadow">
         <Nav />
       </header>
-      <main className="h-screen bg-cover bg-[url('https://tailwindcss.com/_next/static/media/hero@75.4dea7abe609fc522c039fba7662ceea2.jpg')]">
+      <main className="dark:bg-gray-700 dark:bg-none h-screen bg-cover bg-[url('https://tailwindcss.com/_next/static/media/hero@75.4dea7abe609fc522c039fba7662ceea2.jpg')]">
         <div className="px-4 py-6 sm:px-0">
           <div className="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
             <div className="sm:text-center lg:text-left">
-              <h2 className="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
+              <h2 className="dark:text-white text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
                 This demo is using
                 <br className="xl:hidden" />
                 <a
                   target="_blank"
-                  className="text-indigo-600 underline hover:text-indigo-500"
+                  className="dark:text-indigo-400 text-indigo-600 underline hover:text-indigo-500"
                   href="https://tailwindcss.com"
                 >
                   Tailwind CSS
                 </a>
               </h2>
-              <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+              <p className="dark:text-gray-200 mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                 All the code present here is part of a free sample from{" "}
                 <a
                   href="https://tailwindui.com"
-                  className="text-indigo-600 underline hover:text-indigo-500"
+                  className="dark:text-indigo-400 text-indigo-600 underline hover:text-indigo-500"
                 >
                   Tailwind UI
                 </a>{" "}

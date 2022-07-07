@@ -1,14 +1,16 @@
 import { useAuth } from "../hooks/use-auth";
 import useRouter from "../hooks/use-router";
+import useDark from "../hooks/use-dark";
 
 const Nav = () => {
   const { user, signout } = useAuth();
   const { NavLink: Link } = useRouter();
+  const { isDark, toggleDark } = useDark()
 
   const linkActiveClassName =
-    "w-full inline-block capitalize px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900";
+    "dark:text-white w-full inline-block capitalize px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900";
   const linkClassName =
-    "w-full inline-block capitalize px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700";
+    "dark:text-gray-700 w-full inline-block capitalize px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:!text-white hover:bg-gray-700";
   const [menuHidden, hideMenu] = useState(false);
   const menu = (
     <ul className="flex flex-col md:flex-row md:space-x-4">
@@ -106,7 +108,7 @@ const Nav = () => {
   )
 
   return (
-    <nav className="bg-gray-800 px-4 sm:px-6 lg:px-8 py-2">
+    <nav className="dark:bg-gray-50 bg-gray-800 px-4 sm:px-6 lg:px-8 py-2">
       <div className="max-w-screen-xl mx-auto">
         <div className="flex flex-col divide-y divide-gray-700 md:divide-y-0 md:flex-row md:items-center md:h-16">
           <div className="flex">
@@ -124,6 +126,9 @@ const Nav = () => {
           )}
           <div className="hidden md:block">
             {menu}
+          </div>
+          <div className="ml-auto hover:cursor-pointer" onClick={() => toggleDark()}>
+            {isDark ? <IconIcOutlineLightMode className="text-gray-700" /> : <IconIcOutlineDarkMode className="text-white" />}
           </div>
         </div>
       </div>
