@@ -10,6 +10,7 @@ export default function useRouter() {
   return useMemo(() => {
     return {
       Link,
+      NavLink,
       Outlet,
       routes,
       navigate,

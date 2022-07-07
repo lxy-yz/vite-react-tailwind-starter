@@ -8,7 +8,7 @@ const I18n = () => {
       <header className="shadow">
         <Nav />
       </header>
-      <div className="mx-auto max-w-screen-lg">
+      <div className="mx-auto max-w-sm">
         <h1 className="mt-32 text-center">{t("intro.hi", { name: "i18next with React" })}</h1>
       </div>
     </div>

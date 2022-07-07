@@ -6,7 +6,7 @@ const NotFound = () => {
       <header className="shadow">
         <Nav />
       </header>
-      <div className="mx-auto max-w-screen-lg">
+      <div className="mx-auto max-w-sm">
         <h1 className="mt-32 text-center">404 not found</h1>
       </div>
     </div>
