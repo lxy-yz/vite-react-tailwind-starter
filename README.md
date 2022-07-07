@@ -1,6 +1,6 @@
-# vite-react-starter
+# vite-react-tailwind-starter
 
-React starter-kit with [vite](https://vitejs.dev/) ![](https://api.iconify.design/vscode-icons/file-type-vite.svg?color=%23ec5990&width=36)
+React tailwindcss starter kit with [vite](https://vitejs.dev/) ![](https://api.iconify.design/vscode-icons/file-type-vite.svg?color=%23ec5990&width=36)
 
 ## Features
 
