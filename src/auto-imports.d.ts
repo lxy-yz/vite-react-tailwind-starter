@@ -3,6 +3,9 @@
 declare global {
   const createContext: typeof import('react')['createContext']
   const fireEvent: typeof import('@testing-library/react')['fireEvent']
+  const IconBxMenu: typeof import('~icons/bx/menu.jsx')['default']
+  const IconCarbonApps: typeof import('~icons/carbon/apps.jsx')['default']
+  const IconLogosReact: typeof import('~icons/logos/react.jsx')['default']
   const Link: typeof import('react-router-dom')['Link']
   const Navigate: typeof import('react-router-dom')['Navigate']
   const NavLink: typeof import('react-router-dom')['NavLink']
