@@ -6,8 +6,10 @@ const Nav = () => {
   const { user, signout } = useAuth();
   const { NavLink: Link } = useRouter();
 
-  const linkActiveClassName = 'capitalize px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900'
-  const linkClassName = 'capitalize px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700'
+  const linkActiveClassName =
+    "capitalize px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900";
+  const linkClassName =
+    "capitalize px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700";
 
   return (
     <nav className="bg-gray-800 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -94,10 +96,17 @@ const Nav = () => {
 
         <div className="md:ml-auto flex items-center space-x-2">
           <ReactLogo className="text-2xl" />
-          <a className={`capitalize hover:cursor-pointer ${linkClassName}`} onClick={() => {
-            signout()
-            location.replace('/')
-          }}>sign out</a>
+          {user && (
+            <a
+              className={`capitalize hover:cursor-pointer ${linkClassName}`}
+              onClick={() => {
+                signout();
+                location.replace("/");
+              }}
+            >
+              sign out
+            </a>
+          )}
         </div>
       </div>
     </nav>
