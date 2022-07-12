@@ -6,13 +6,24 @@ const Index = () => {
       <header className="shadow">
         <Nav />
       </header>
-      <main className="dark:bg-gray-700 dark:bg-none h-screen bg-cover bg-[url('https://tailwindcss.com/_next/static/media/hero@75.4dea7abe609fc522c039fba7662ceea2.jpg')]">
+      <main className=" dark:bg-none h-screen bg-cover bg-[url('https://tailwindcss.com/_next/static/media/hero@75.4dea7abe609fc522c039fba7662ceea2.jpg')]">
+        <div className="relative">
+          <video
+            autoPlay
+            controls
+            muted
+            loop
+            className="absolute left-0 top-0 w-screen h-auto -z-10"
+          >
+            <source src="https://mdbcdn.b-cdn.net/img/video/forest.mp4" type="video/mp4" />
+          </video>
+        </div>
         <div className="px-4 py-6 sm:px-0">
           <div className="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
             <div className="sm:text-center lg:text-left">
               <h2 className="dark:text-white text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
                 This demo is using
-                <br className="xl:hidden" />
+                <br />
                 <a
                   target="_blank"
                   className="dark:text-indigo-400 text-indigo-600 underline hover:text-indigo-500"
